@@ -19,6 +19,8 @@ public:
         uint32 pAccountID = p->GetSession()->GetAccountId();
         uint32 pLevel = p->getLevel();
         std::string pClass;
+        std::ostringstream message;
+       
 
         if (!sConfigMgr->GetBoolDefault("PlayerAnnounce", true))
         {
@@ -59,7 +61,10 @@ public:
             break;
         }
 
-        sLog->outString("Player '%s' has Logged In : Level '%u' : Class = '%s' : IP: '%s' : AccountID = '%u'", playerName.c_str(), pLevel, pClass.c_str(), playerIP.c_str(), pAccountID);
+        sLog->SetColor(message.str().c_str(), CYAN);
+        message << "Player " << playerName.c_str() << " has logged in : Level " << pLevel << " : Class = " << pClass.c_str() << " : IP: " << playerIP.c_str() << " : AccountID = " << pAccountID;
+        sLog->outString( message.str().c_str());
+        sLog->ResetColor(message.str().c_str());
     }
 };
 
