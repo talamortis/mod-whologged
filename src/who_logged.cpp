@@ -61,10 +61,10 @@ public:
             break;
         }
 
-        sLog->SetColor(message.str().c_str(), CYAN);
+        sLog->SetColor(true, CYAN);
         message << "Player " << playerName.c_str() << " has logged in : Level " << pLevel << " : Class = " << pClass.c_str() << " : IP: " << playerIP.c_str() << " : AccountID = " << pAccountID;
         sLog->outString( message.str().c_str());
-        sLog->ResetColor(message.str().c_str());
+        sLog->ResetColor(true);
     }
 };
 
