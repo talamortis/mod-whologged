@@ -62,8 +62,7 @@ public:
         }
 
         sLog->SetColor(true, CYAN);
-        message << "Player " << playerName.c_str() << " has logged in : Level " << pLevel << " : Class = " << pClass.c_str() << " : IP: " << playerIP.c_str() << " : AccountID = " << pAccountID;
-        sLog->outString( message.str().c_str());
+        sLog->outString("Player '%s' has logged in : Level '%u' : Class '%s' : IP '%s' : AccountID '%u'", playerName.c_str(), pLevel, pClass.c_str(), playerIP.c_str(), pAccountID);
         sLog->ResetColor(true);
     }
 };
