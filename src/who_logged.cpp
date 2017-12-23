@@ -19,8 +19,6 @@ public:
         uint32 pAccountID = p->GetSession()->GetAccountId();
         uint32 pLevel = p->getLevel();
         std::string pClass;
-        std::ostringstream message;
-       
 
         if (!sConfigMgr->GetBoolDefault("PlayerAnnounce", true))
         {
@@ -63,6 +61,18 @@ public:
 
         sLog->SetColor(true, CYAN);
         sLog->outString("Player '%s' has logged in : Level '%u' : Class '%s' : IP '%s' : AccountID '%u'", playerName.c_str(), pLevel, pClass.c_str(), playerIP.c_str(), pAccountID);
+        sLog->ResetColor(true);
+    }
+
+    void OnLogout(Player* p)
+    {
+        std::string playerIP = p->GetSession()->GetRemoteAddress();
+        std::string playerName = p->GetName();
+        uint32 pAccountID = p->GetSession()->GetAccountId();
+        uint32 pLevel = p->getLevel();
+
+        sLog->SetColor(true, CYAN);
+        sLog->outString("Player '%s' has logged out : level '%u' : AccountID '%u'", playerName.c_str(), pLevel, pAccountID);
         sLog->ResetColor(true);
     }
 };
