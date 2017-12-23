@@ -9,7 +9,7 @@ Current features:
 Upcoming features:
 
 ## Screenshots
-https://cdn.discordapp.com/attachments/309418302923472898/385923854666563586/unknown.png
+![WhoLogged](https://cdn.discordapp.com/attachments/309418302923472898/385923854666563586/unknown.png)
 
 ## Requirements
 
